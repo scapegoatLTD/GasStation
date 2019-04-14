@@ -2,7 +2,8 @@
  * @file     GasStation.java
  * @date     14.04.2019
  */
-package exe;
+package app;
+import javafx.*;
 
 /**
  * @author BTIndustries
