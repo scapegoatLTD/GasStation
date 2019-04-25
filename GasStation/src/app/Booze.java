@@ -1,14 +1,14 @@
 /**
- * @file     Souvenir.java
+ * @file     Booze.java
  * @date     14.04.2019
  */
-package shop;
+package app;
 
 /**
  * @author GRVN@BTI
- * @version  - 2019
+ * @version 0.1 - 2019
  * @project GasStation
  */
-public class Souvenir {
+public class Booze {
 
 }
