@@ -21,4 +21,5 @@ public class Booking {
 	private Date date;
 	private double sum;
 	private LinkedList<Article> articles;
+	private Employee employee;
 }
