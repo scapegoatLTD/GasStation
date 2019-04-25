@@ -1,6 +1,6 @@
 /**
- * @file     Souvenir.java
- * @date     14.04.2019
+ * @file     Fluid.java
+ * @date     24.04.2019
  */
 package app;
 
@@ -9,6 +9,6 @@ package app;
  * @version  - 2019
  * @project GasStation
  */
-public class Souvenir {
-
+public enum Content {
+	DIESEL, GAS
 }
