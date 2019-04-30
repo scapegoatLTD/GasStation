@@ -6,7 +6,10 @@ package app;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+//import javafx.scene.layout.;
 import javafx.stage.Stage;
 
 /**
@@ -16,6 +19,10 @@ import javafx.stage.Stage;
 public class GasStation extends Application {
 
 	private Stage primaryStage;
+	private Stage secondaryStage;
+	private boolean login = false; //TODO: proper login function
+	private WindowController windowController = new WindowController();
+	
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -24,15 +31,33 @@ public class GasStation extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
-		this.loginWindow();
+		this.openLoginWindow();
+		this. openMainFrame();
 	}
 	
+	public void openMainFrame() {
+		try {
+			
+			FXMLLoader loader = new FXMLLoader(GasStation.class.getResource("GasStationMainFrame.fxml"));
+
+			TitledPane pane = loader.load();
+			WindowController WindowController = loader.getController();
+			WindowController.setMain(this);
+			
+			Scene scene = new Scene(pane);
+			
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
 	
-	public void loginWindow() {
+	public void openLoginWindow() {
 		try {
 			FXMLLoader loader = new FXMLLoader(GasStation.class.getResource("LoginWindow.fxml"));
-			AnchorPane pane = loader.load();
-			
+			Pane pane = loader.load();
 			primaryStage.setMinHeight(400.00);
 			primaryStage.setMaxHeight(500.00);
 			
@@ -45,6 +70,7 @@ public class GasStation extends Application {
 			primaryStage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 
